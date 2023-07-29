@@ -14,7 +14,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
     }
 
-    // MARK: - Table View Data Source
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems.count
@@ -29,14 +29,12 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
-    // MARK: - Table View Delegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         todoItems[indexPath.row].isCompleted.toggle()
         tableView.reloadData()
     }
 
-    // MARK: - Actions
 
     @IBAction func addTask(_ sender: Any) {
         if let title = taskTextField.text, !title.isEmpty {
@@ -49,7 +47,6 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 
-    // MARK: - Helper Methods
 
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
